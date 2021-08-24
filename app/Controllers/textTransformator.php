@@ -4,10 +4,10 @@ namespace App\Controllers;
 
 class textTransformator
 {
-    public function revertCharacters($inString)         // функция преобразования предложения
+    public function revertCharacters($inString)             // функция преобразования предложения
     {
 
-        if(is_bool($inString)) {
+        if(is_bool($inString)) {                            // определяем тип данных
             return !$inString;
         } elseif (is_array($inString)) {
             $arrFlag = true;
@@ -15,6 +15,7 @@ class textTransformator
         } else {
             $arrFlag = false;
         }
+
         $return_str = '';
         $exlopedstring = $this->explodeString($inString);
         foreach ($exlopedstring as &$item){
@@ -26,7 +27,7 @@ class textTransformator
         return ($arrFlag) ? mb_str_split($return_str) : $return_str;
     }
 
-    private function explodeString($inStrhing)            // функция подрыва строки
+    private function explodeString($inStrhing)                  // функция подрыва строки
     {
         $returnArr = array();
         foreach (explode(' ',$inStrhing) as $word){     // взорвем по пробелу, так как каждое слово, независимо от знаков препинания разделяется
