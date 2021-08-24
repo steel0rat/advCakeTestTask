@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuite name="advcake">
+        <directory suffix="Test.php">./tests/advCake</directory>
+    </testsuite>
+</phpunit>
